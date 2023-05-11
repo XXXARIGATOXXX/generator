@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <cmath>
 using namespace std;
 
 
@@ -15,6 +16,8 @@ int Summa(int* counters, int size)
   return tmp;
 }
 
+// outpost #1
+
 int GetRandomInt(int min, int max)
 {
     if ( min == max ) // сравнение вводимых значений
@@ -27,9 +30,21 @@ int GetRandomInt(int min, int max)
 
     if ( min < 0 ) // если min меньше нуля, то..
         max += 0 - min; // в max присваивает min с положительным знаком
-    return rand( ) % ( max + 1 ) + min; // возращение выражения: получаем остаток от деления ранодмного числа на среднее фриметическое min и max
+    return rand( ) % ( max + 1 ) + min; // возращение выражения: получаем остаток от деления рандмного числа на среднее фриметическое min и max
 }
 
+//outpost #2
+
+double GetRandomDouble(intermidiate, number)
+{
+    for (int i=0;i<7;i++)
+    {
+        number += intermidiate;
+        number += intermidiate * pow(10.,i + 1);
+    }
+}
+
+//outpost #3
 
 int main() 
 {   
@@ -38,45 +53,22 @@ int main()
     int counters[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     
 
-    for(int i= 1; i <= 100;i++)
+    for(int i = 1; i <= 10000;i++)
     {
-      int number = GetRandomInt(0,9);
-      cout << number << endl;
-      
-      switch(number)
-      {
-        case 0:
-            counters[0]++;
-            break;
-        case 1:
-            counters[1]++;
-            break;
-        case 2:
-            counters[2]++;
-            break;
-        case 3:
-            counters[3]++;
-            break;
-        case 4:
-            counters[4]++;
-            break;
-        case 5:
-            counters[5]++;
-            break;
-        case 6:
-            counters[6]++;
-            break;
-        case 7:
-            counters[7]++;
-            break;
-        case 8:
-            counters[8]++;
-            break;
-        case 9:
-            counters[9]++;
-            break;
-       }
+        int intermidiate = GetRandomInt(0,9);
+        double number = 0.;
+
+    GetRandomDouble;
+        counters[intermidiate]++;      
     }
-cout << Summa(counters, 10) << endl;
+    cout << number << endl;
+
+    cout << Summa(counters, 10) << endl;
+    for (int i=0;i<10;i++)
+    {
+        cout << "сгенерировано:" << i << ":" << counters[i] << endl;
+    }
 }
+
+//outpost #4
 
